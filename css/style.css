@@ -237,10 +237,16 @@ input {
 }
 
 /* HEADER MIDDLE */
+
+.header__middle {
+    height: 128px;
+    align-items: center;
+}
 .header__middle .container {
     justify-content: space-between;
     align-items: center;
     gap: 1rem;
+    width: 80%;
 }
 
 .header__middle__search {
