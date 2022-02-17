@@ -289,7 +289,7 @@ p {
 /* ITEMS CARDS */
 .item-card {
     height: 450px;
-    width:267px;
+    width:100%;
     text-align: center;
 }
 
@@ -301,7 +301,7 @@ p {
     background: url(../images/xwomen-1.jpg);
     background-repeat: no-repeat;
     background-position: center;
-    background-size: contain;
+    background-size: cover;
     height: 325px;
 }
 
@@ -326,8 +326,8 @@ p {
 
 .item-card__like-btn {
     position: absolute;
-    top: 10px;
-    left: 230px;
+    top: 5%;
+    left: 80%;
 }
 
 .item-card__desc {
@@ -351,7 +351,43 @@ p {
     font-weight: 500;
 }
 
+/* ITEM SLIDERS */
+.item-slider {
+    height: 580px;
+    width: 1060px;
+    display: flex;
+    flex-direction: column;
+}
 
+.item-slider__nav {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    font-size: 2rem;
+    padding: 3.2rem 0;
+}
+
+.item-slider__nav a {
+    color: var(--color-body-lighter);
+    transition: 200ms;
+    
+}
+
+.item-slider__nav a:hover {
+    color: var(--color-headings);
+    border-bottom: 2px solid var(--color-body);
+}
+
+.item-slider__items {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.item-slider__items .item-card {
+    /* width: 33%; */
+}
 
 
 /* HEADER TOP */
@@ -728,6 +764,54 @@ p {
     }
     
 }
+
+/* WOMEN SECTION */
+.women .container {
+    display: flex;
+    justify-content: space-between;
+    gap: 10rem;
+}
+
+.women .container .gender-card {
+    width: 30%;
+}
+.women .container .item-slider {
+    width: 70%;
+}
+
+@media screen and (max-width: 1200px) {
+    .item-slider__items > div:first-child{
+        display: none;
+    }    
+}
+
+@media screen and (max-width: 968px) {
+    .women .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .women .container .gender-card {
+        width: 100%;
+        background-position: top;
+    }
+    
+    .women .container .item-slider{
+        width: 100%;
+    }
+
+    .women .item-card .item-card__image{
+        height: 570px;
+    }
+
+}
+
+@media screen and (max-width: 580px) {
+    .item-slider__items > div:last-child{
+        display: none;
+    }    
+}
+
 
 
 
