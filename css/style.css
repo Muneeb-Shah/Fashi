@@ -121,12 +121,16 @@ input {
     grid-template-columns: repeat(3, 1fr);
 }
 
-/* FLEXES */
-.flex {
+/* COLLAPSIBLES */
+.collapsible__header {
     display: flex;
 }
 
-/* SEARCH INPUT */
+/* SEARCH INPUTS */
+
+.search-input {
+    display: flex;
+}
 
 .search-input input {
     padding: 1.5rem;
@@ -174,10 +178,14 @@ input {
 }
 
 .header__top .container {
+    display: flex;
     height: 55px;
     justify-content: space-between;
     align-items: center;
+}
 
+.header__top__contact {
+    display: flex;
 }
 
 .header__top__contact__email {
@@ -191,10 +199,12 @@ input {
 }
 
 .header__top__social{
+    display: flex;
     gap: 2rem;
 }
 
 .header__top__social__social-icons {
+    display: flex;
     border-right: 1px solid var(--color-border);
     padding-right: 2rem;
     gap: 2rem;
@@ -236,9 +246,9 @@ input {
 
 .header__middle {
     height: 128px;
-    align-items: center;
 }
 .header__middle .container {
+    display: flex;
     justify-content: space-between;
     align-items: center;
     gap: 1rem;
@@ -246,13 +256,11 @@ input {
 }
 
 .header__middle__search {
+    display: flex;
     width: 60%;
-    background-color: aqua;
-
 }
 
 .header__middle__search__categories {
-    padding-right: 1.5rem;
     padding-left: 1rem;
     border: 1px solid var(--color-border);
     background-color: #fff;
@@ -270,6 +278,7 @@ input {
 }
 
 .header__middle__cart {
+    display: flex;
     gap: 2rem;
 }
 
@@ -312,6 +321,7 @@ input {
 }
 
 .header__bottom__upper {
+    display: flex;
     background-color: var(--color-secondary);
     align-items: center;
     height: 50px;
@@ -333,6 +343,7 @@ input {
 }
 
 .main-nav__links {
+    display: flex;
     justify-content: space-between;
     align-items: center;
     width: 100%;
@@ -349,7 +360,7 @@ input {
     font-size: 1.4rem;
     font-weight: 700;
     color: #fff;
-    transition: background-color 350ms;
+    transition: background-color 250ms;
 }
 
 .main-nav__links li:hover {
@@ -378,7 +389,7 @@ input {
 .header__bottom__lower__nav__links li {
     color: #fff;
     margin-bottom: 1rem;
-    transition: background-color 350ms;
+    transition: background-color 250ms;
 }
 
 .header__bottom__lower__nav__links li:hover {
@@ -388,5 +399,8 @@ input {
 @media screen and (max-width: 768px) {
     .header__bottom__upper {
         display: none;
+    }
+    .header__bottom__lower {
+    margin-top: 2rem;
     }
 }
