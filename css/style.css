@@ -466,6 +466,8 @@ p {
 
 .header__middle {
     height: 128px;
+    display: flex;
+    align-items: center;
 }
 .header__middle .container {
     display: flex;
