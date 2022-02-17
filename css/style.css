@@ -197,6 +197,17 @@ p {
     font-weight: 600;
 }
 
+.btn-secondary {
+    display: inline-block;
+    width: fit-content;
+    background-color: #fff;
+    border: 1px solid var(--color-border);
+    color: #000;
+    padding: 1.2rem 3rem;
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+
 /* SEARCH INPUTS */
 .search-input {
     display: flex;
@@ -238,6 +249,109 @@ p {
     border-radius: 50%;
     display: inline-block;
 }
+
+/* GENDER CARDS */
+
+.gender-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 290px;
+    height: 620px;
+    background: url(../images/women-large.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.gender-card__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.gender-card__content h2 {
+    text-align: center;
+    color: #fff;
+    font-size: 4.8rem;
+    font-weight: 500;
+}
+
+.gender-card__content a {
+    width: fit-content;
+    text-align: center;
+    color: #fff;
+    font-size: 1.8rem;
+    border-bottom: 2px solid var(--color-border);
+}
+
+/* ITEMS CARDS */
+.item-card {
+    height: 450px;
+    width:267px;
+    text-align: center;
+}
+
+.item-card__image {
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    background: url(../images/xwomen-1.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    height: 325px;
+}
+
+.item-card__btns {
+    width: 80%;
+    height: 52px;
+    display: flex;
+    justify-content: center;
+}
+
+.item-card__btns .btn-primary {
+    width: 39px;
+    height: 52px;
+    padding: 0 10px;
+}
+
+.item-card__btns .btn-secondary {
+    font-size: 1.5rem;
+    padding: 0 10px;
+
+}
+
+.item-card__like-btn {
+    position: absolute;
+    top: 10px;
+    left: 230px;
+}
+
+.item-card__desc {
+    text-align: center;
+    padding-top: 1.6rem;
+}
+
+.item-card__desc__category {
+    font-size: 1rem;
+    color: var(--color-body-lighter);
+}
+
+.item-card__desc__name {
+    font-size: 1.8rem;
+    color: var(--color-headings);
+}
+
+.item-card__desc__price {
+    font-size: 2rem;
+    color: var(--color-primary);
+    font-weight: 500;
+}
+
+
 
 
 /* HEADER TOP */
@@ -615,4 +729,6 @@ p {
     
 }
 
-/* WOMEN */
+
+
+
