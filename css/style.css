@@ -100,9 +100,14 @@ p {
     }
 }
 
-/* Container */
-.container {
+/* Containers */
+#header .container, #hero .container {
     max-width: 80%;
+    margin: 0 auto;
+}
+
+#main .container {
+    max-width: 90%;
     margin: 0 auto;
 }
 
@@ -555,17 +560,17 @@ p {
 
 /* BANNER */
 .banner-content {
-    height: 235px;
+    height: 320px;
     display: flex;
     justify-content: space-between;
-    padding: 8rem 5rem;
+    gap: 3rem;
 }
 .banner-content div {
     display: flex;
     align-items: center;
     justify-content: center;
     background-position: center;
-    background-size: contain;
+    background-size: cover;
     background-repeat: no-repeat;
     height: inherit;
     width: 32%;
@@ -590,3 +595,24 @@ p {
     font-weight: 700;
     padding: 1rem 2.8rem;
 }
+
+@media screen and (max-width: 1000px) {
+    .banner-content{
+        flex-direction: column;
+        align-items: center;
+        height: 1600px;
+
+    }
+
+    .banner-content div {
+        width: 100%;
+    }
+
+    .banner-content__desc {
+        font-size: 2.4rem;
+
+    }
+    
+}
+
+/* WOMEN */
