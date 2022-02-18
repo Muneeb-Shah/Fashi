@@ -948,6 +948,21 @@ header {
 
 }
 
+/* MEN SECTION */
+.men .container {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    gap: 10rem;
+}
+
+.men .gender-card {
+    background: url(../images/man-large.jpg);
+}
+
+.men .item-card__image {
+    background: url(../images/xman-2.jpg.pagespeed.ic.MljB6PGycq.jpg);
+}
 
 
 
