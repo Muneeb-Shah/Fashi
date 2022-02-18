@@ -119,24 +119,6 @@ header {
     margin-bottom: 8rem;
 }
 
-/* LISTS */
-.inline-list {
-    display: flex;
-}
-
-/* GRIDS */
-.grid {
-    display: grid;
-}
-
-.grid-1x2 {
-    grid-template-columns: repeat(2, 1fr);
-}
-
-.grid-1x3 {
-    grid-template-columns: repeat(3, 1fr);
-}
-
 /* SECTION HEADINGS */
 .section-heading {
     display:flex;
@@ -958,12 +940,109 @@ header {
 
 .men .gender-card {
     background: url(../images/man-large.jpg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 290px;
+    height: 620px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
 }
 
-.men .item-card__image {
-    background: url(../images/xman-2.jpg.pagespeed.ic.MljB6PGycq.jpg);
+@media screen and (max-width: 968px) {
+    .men .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .men .container .gender-card {
+        width: 100%;
+        background-position: top;
+    }
+    
+    .men .container .item-slider{
+        width: 100%;
+    }
+
+    .men .item-card .item-card__image{
+        height: 570px;
+    }
+
 }
 
+/* IMAGE GRID */
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    height: 320px;
+}
+
+.image-grid .image-1 {
+    background: url(../images/insta-1.jpg);
+}
+
+.image-grid .image-2 {
+    background: url(../images/insta-2.jpg);
+}
+
+.image-grid .image-3 {
+    background: url(../images/insta-3.jpg);
+}
+
+.image-grid .image-4 {
+    background: url(../images/insta-4.jpg);
+}
+
+.image-grid .image-5 {
+    background: url(../images/insta-5.jpg);
+}
+
+.image-grid .image-6 {
+    background: url(../images/insta-6.jpg);
+}
+
+.image-grid__img {
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
+    color: #fff !important;
+}
+
+.image-grid__desc {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+    text-align: center;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: opacity 300ms;
+}
+
+.image-grid__desc:hover {
+    opacity: 1;
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4));
+}
+
+.image-grid__img .fa {
+    font-size: 3rem;
+}
+
+@media screen and (max-width: 968px) {
+    .image-grid {
+        grid-template-columns: repeat(2, 1fr);
+        height: 900px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .image-grid {
+        grid-template-columns: auto;
+        height: 1800px;
+    }
+}
 
 
 
