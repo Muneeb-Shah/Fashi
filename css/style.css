@@ -1088,6 +1088,31 @@ header {
     grid-template-columns: repeat(3, 1fr);
 }
 
+.benifits {
+    height: 95px;
+    display: flex;
+    border: 1px solid var(--color-border);
+    justify-content: space-between;
+    align-items: center;
+    padding: 3rem 5.5rem;
+
+}
+
+.benifits__item {
+    display: flex;
+    gap: 1.8rem;
+}
+
+.benifits__item__icon {
+    font-size: 4rem;
+    color: var(--color-primary);
+}
+
+.benifits__item__desc{
+    font-size: 1.6rem;
+    color: var(--color-headings);
+}
+
 @media screen and (max-width: 968px) {
 
     #main .blog .container {
@@ -1100,6 +1125,15 @@ header {
 
     .blog__content {
         grid-template-columns: repeat(2, 1fr);
+    }
+
+    .benifits {
+        height: 287px;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 3rem 5.5rem;
+        gap: 3rem;
+
     }
 }
 
@@ -1115,6 +1149,14 @@ header {
 
     .blog__content {
         grid-template-columns: auto;
+    }
+
+    
+}
+
+@media screen and (max-width: 538px) {
+    .benifits {
+        height: 500px;
     }
 }
 
