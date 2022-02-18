@@ -111,6 +111,14 @@ p {
     margin: 0 auto;
 }
 
+/* SECTIONS */
+main > section {
+    margin-bottom: 8rem;
+}
+header {
+    margin-bottom: 8rem;
+}
+
 /* LISTS */
 .inline-list {
     display: flex;
@@ -128,6 +136,51 @@ p {
 .grid-1x3 {
     grid-template-columns: repeat(3, 1fr);
 }
+
+/* SECTION HEADINGS */
+.section-heading {
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 3.8rem;
+}
+.section-heading__heading {
+    color: var(--color-headings);
+    font-size: 3.6rem;
+    text-align: center;
+}
+
+.section-heading::after {
+    content: "";
+    display: inline-block;
+    height: 3px;
+    width: 80px;
+    background-color: var(--color-primary);
+}
+
+/* DESCRIPTIONS */
+.description {
+    font-size: 1.6rem;
+    color: var(--color-body);
+}
+
+/* PRICE */
+.price-primary {
+    font-size: 2rem;
+    color: var(--color-primary);
+    font-weight: 500;
+}
+
+.price-w-desc {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+}
+
+.price-w-desc span {
+    line-height: 2;
+}
+
 
 /* COLLAPSIBLES */
 .collapsible__header {
@@ -248,6 +301,26 @@ p {
     text-align: center;
     border-radius: 50%;
     display: inline-block;
+}
+
+/* TIMER */
+.timer {
+    display: flex;
+    gap: 3.5rem;
+    width: fit-content;
+}
+
+.timer__item {
+    display: inline-block;
+    background-color: #fff;
+    padding: 1rem 1.4rem;
+    text-align: center;
+}
+
+.timer__item__val {
+    color: var(--color-primary);
+    font-size: 3.6rem;
+    font-weight: 500;
 }
 
 /* GENDER CARDS */
@@ -812,6 +885,67 @@ p {
     .item-slider__items > div:last-child{
         display: none;
     }    
+}
+
+/* DEAL SECTION */
+.deal .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 565px;
+    background: url(../images/time-bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    padding: 8rem 9rem;
+}
+
+.deal__content {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+}
+
+.deal__content .section-heading {
+    margin: 0;    
+}
+
+.deal__desc .description {
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.deal__desc .price-primary {
+    font-size: 2.4rem;
+}
+
+@media screen and (max-width:990px) {
+    .deal .container{
+        align-items: center;
+        height: 660px;
+    }
+
+    .deal__content {
+        width: 70%;
+    }
+}
+
+@media screen and (max-width:480px) {
+    .deal .container{
+        align-items: center;
+        height: 720px;
+    }
+
+    .deal__content {
+        width: 100%;
+    }
+
+    .deal .timer {
+        gap: 0.5rem;
+    }
+
 }
 
 
