@@ -1162,7 +1162,7 @@ header {
 
 
 /* BRANDS */
-/* .brands {
+.brands {
     height: 121px;
     background-color: #303030;
 }
@@ -1172,20 +1172,15 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
-}
-.img-container {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 0 1rem;
+    gap: 3%;
+
 }
 
 .brands__img {
     height: 40px;
-    width: 160px;
+    width: 15%;
     background: url(../images/logo-1.png);
     background-repeat: no-repeat;
-    background-size: cover;
-} */
+    background-size: 100% 100%;
+}
 
