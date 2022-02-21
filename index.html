@@ -6,14 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="css/slick.css"/>
-    <link rel="stylesheet" href="css/slick-theme.css"/>
-
+    <link rel="stylesheet" href="css/aos.css" />    
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     
-    <!-- <header id="header">
+    
+    <header id="header">
         <section class="header__top">
             <div class="container">
                 <div class="header__top__contact">
@@ -66,8 +65,8 @@
                         <span class="notification-btn__badge">1</span>
                     </a>
                     
-                        <div class="notification-btn cart-hover-btn" href="">
-                            <i class="fa fa-cart-plus"></i>
+                    <div class="notification-btn cart-hover-btn" href="">
+                        <i class="fa fa-cart-plus"></i>
                             <span class="notification-btn__badge">1</span>
                             <div class="cart">
                                 <div class="cart__items">
@@ -137,9 +136,22 @@
                 </div>
             </div>
         </section>
+        <section class="hero">
+            <div class="container">
+                <div class="hero__content">
+                    <p class="hero__content__category" data-aos="fade-up" data-aos-duration="600">BAG.KIDS</p>
+                    <h1 class="hero__content__heading" data-aos="fade-up" data-aos-duration="1200">Black friday</h1>
+                    <p class="hero__content__desc description" data-aos="fade-up" data-aos-duration="1900">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Reiciendis exercitationem in blanditiis nemo vel deleniti?</p>
+                    <button class="btn-primary" data-aos="fade-up" data-aos-duration="2200">SHOP NOW</button>
+                </div>
+            </div>
+            <div class="badge rotate-90-cw">
+                <div class="badge__content"><p>SALE 50%</p></div>
+            </div>
+        </section>
     </header>
     
-
+    <main id="main">
         <section class="banner">
             <div class="container">
                 <div class="banner-content">
@@ -483,7 +495,7 @@
                 </ul>
             </div>
         </div>
-    </footer> -->
+    </footer>
 
 
 
@@ -492,6 +504,10 @@
 
     <script src="js/main.js"></script>
     <script src="js/products.js"></script>
+    <script src="js/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
 
 
 </body>
