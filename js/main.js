@@ -11,17 +11,18 @@ let products = [
             {id: 1, title: 'A', price: 100.00},
             {id: 2, title: 'B', price: 200.20},
             {id: 3, title: 'C', price: 310.99},
-            {id: 4, title: 'C', price: 310.99},
-            {id: 5, title: 'C', price: 310.99},
-             {id: 1, title: 'A', price: 100.00},
-            {id: 2, title: 'B', price: 200.20},
-            {id: 3, title: 'C', price: 310.99},
-            {id: 4, title: 'C', price: 310.99},
-            {id: 5, title: 'C', price: 310.99}, {id: 1, title: 'A', price: 100.00},
-            {id: 2, title: 'B', price: 200.20},
-            {id: 3, title: 'C', price: 310.99},
-            {id: 4, title: 'C', price: 310.99},
-            {id: 5, title: 'ZZZZ', price: 310.99}
+            {id: 4, title: 'D', price: 310.99},
+            {id: 5, title: 'E', price: 310.99},
+            {id: 1, title: 'F', price: 100.00},
+            {id: 2, title: 'G', price: 200.20},
+            {id: 3, title: 'H', price: 310.99},
+            {id: 4, title: 'I', price: 310.99},
+            {id: 5, title: 'J', price: 310.99}, 
+            {id: 1, title: 'K', price: 100.00},
+            {id: 2, title: 'L', price: 200.20},
+            {id: 3, title: 'M', price: 310.99},
+            {id: 4, title: 'N', price: 310.99},
+            {id: 5, title: 'O', price: 310.99}
                     
         ];
 

@@ -36,6 +36,7 @@ button {
     cursor: pointer;
 }
 
+
 /* ANIMATIONS */
 
 /* Badge Animation */
@@ -991,11 +992,6 @@ header {
     justify-content: space-between;
     gap: 10rem;
 }
-
-.women .container .gender-card {
-    /* width: 30%; */
-}
-
 
 @media screen and (max-width: 968px) {
     .women .container {
