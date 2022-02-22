@@ -6,6 +6,7 @@
     --color-body: #636363;
     --color-body-lighter: #b2b2b2;
     --color-border: #e5e5e5;
+    --slider-animation: -260px;
 }
 
 
@@ -37,6 +38,7 @@ button {
 
 /* ANIMATIONS */
 
+/* Badge Animation */
 .rotate-90-cw {
 	animation: rotate-90-cw 2000ms cubic-bezier(0.250, 0.460, 0.450, 0.940);
 }
@@ -64,6 +66,41 @@ button {
   100% {
         transform: rotate(0);
         opacity: 1;
+  }
+}
+
+/* Item slider animation */
+/* .slide-left {
+	animation: slide-left 3s ease-in 1s infinite both;
+}
+
+@keyframes slide-left {
+
+    0% {
+        transform: translateX(0);
+
+    }
+    100% {
+        transform: translate(-260px);
+    }
+} */
+
+.slide-left {
+  /* min-width: 400px; */
+	animation: slide-left 4s linear infinite;
+}
+
+@keyframes slide-left {
+
+    /* 0% {
+        transform: translateX(0);
+
+    }
+    100% {
+        transform: translate(-260px);
+    } */
+      100% { 
+    transform: translateX(-50.6666%);  
   }
 }
 
@@ -377,8 +414,9 @@ header {
 /* ITEM CARDS */
 .item-card {
     height: 450px;
-    width:265px;
     text-align: center;
+    margin: 0 2%;
+
 }
 
 .item-card__image {
@@ -391,6 +429,7 @@ header {
     background-position: center;
     background-size: cover;
     height: 325px;
+    width: inherit;
 }
 
 .item-card__btns {
@@ -439,12 +478,12 @@ header {
     font-weight: 500;
 }
 
-/* ITEM SLIDERS */
+/* ITEM SLIDER */
 .item-slider {
     height: 580px;
-    width: 1060px;
     display: flex;
     flex-direction: column;
+    overflow: hidden;
 }
 
 .item-slider__nav {
@@ -470,11 +509,24 @@ header {
 .item-slider__items {
     display: flex;
     justify-content: space-between;
-    gap: 1rem;
+    /* overflow: hidden; */
 }
 
 .item-slider__items .item-card {
     /* width: 33%; */
+}
+
+/* Slick Slider arrow positioning */
+.slick-next {
+    /* top: 38% !important; */
+}
+
+@media screen and (max-width: 1200px) {
+        
+}
+
+@media screen and (max-width: 990px) {
+         
 }
 
 
@@ -941,17 +993,9 @@ header {
 }
 
 .women .container .gender-card {
-    width: 30%;
-}
-.women .container .item-slider {
-    width: 70%;
+    /* width: 30%; */
 }
 
-@media screen and (max-width: 1200px) {
-    .item-slider__items > div:first-child{
-        display: none;
-    }    
-}
 
 @media screen and (max-width: 968px) {
     .women .container {
@@ -963,22 +1007,10 @@ header {
         width: 100%;
         background-position: top;
     }
-    
-    .women .container .item-slider{
-        width: 100%;
-    }
 
-    .women .item-card .item-card__image{
-        height: 570px;
-    }
 
-}
 
-@media screen and (max-width: 580px) {
-    .item-slider__items > div:last-child{
-        display: none;
-    }    
-}
+
 
 /* DEAL SECTION */
 .deal .container {
