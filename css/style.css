@@ -839,6 +839,7 @@ header {
     transition: 300ms;
     opacity: 0;
     visibility: hidden;
+    z-index: 999;
 }
 
 .cart-hover-btn:hover .cart {

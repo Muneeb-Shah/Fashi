@@ -1,3 +1,4 @@
+// PRODUCTS SLIDER WOMEN
 $('.products-slider-women').slick({
     dots: true,
     infinite: true,
@@ -5,7 +6,6 @@ $('.products-slider-women').slick({
     arrows: true,
     slidesToShow: 3,
     slidesToScroll: 1,
-    autoplay: true,
     autoplay: true,
     autoplaySpeed: 5000,
     speed: 1000,
@@ -34,6 +34,7 @@ $('.products-slider-women').slick({
     ]
 });
 
+// PRODUCTS SLIDER MEN
 $('.products-slider-men').slick({
     dots: true,
     infinite: true,
@@ -41,7 +42,6 @@ $('.products-slider-men').slick({
     arrows: true,
     slidesToShow: 3,
     slidesToScroll: 1,
-    autoplay: true,
     autoplay: true,
     autoplaySpeed: 5000,
     speed: 1000,
