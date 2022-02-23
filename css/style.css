@@ -346,7 +346,8 @@ header {
 }
 
 .notification-btn__badge {
-    position: absolute;
+    position: sticky;
+    /* position: absolute; */
     top: -2px;
     right: -6px;
     color: #fff;
@@ -830,15 +831,15 @@ header {
 }
 
 .cart {
-    position: absolute;
+    /* position: absolute; */
     top: 200%;
     right: -300%;
     width: 490px;
     padding: 7rem;
     background-color: #fff;
     transition: 300ms;
-    opacity: 0;
-    visibility: hidden;
+    /* opacity: 0;
+    visibility: hidden; */
     z-index: 999;
 }
 
