@@ -53,6 +53,3 @@ for(let i=0; i<product_html.length; i++){
     document.querySelector('.js-items-men').innerHTML += product_html[i];
 }
 
-
-
-// PRODUCT SLIDER
