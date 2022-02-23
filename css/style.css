@@ -301,7 +301,6 @@ header {
     padding: 1.2rem 3rem;
     font-size: 1.4rem;
     font-weight: 600;
-    transition: background-color 250ms !important;
 }
 
 .btn-primary:hover {
@@ -534,7 +533,10 @@ header {
 }
 
 /* Slick Slider arrows */
-.prev-btn, .next-btn {
+.prev-btn-men,
+.prev-btn-women, 
+.next-btn-men,
+.next-btn-women {
     display: block;
     position: absolute;
     top: 45%;
@@ -543,16 +545,20 @@ header {
     cursor: pointer;
 }
 
-.prev-btn {
+.prev-btn-men, 
+.prev-btn-women {
     left: 15px;
 }
 
-.prev-btn:hover, .next-btn:hover {
+.prev-btn-men:hover,
+.prev-btn-women:hover, 
+.next-btn-men:hover,
+.next-btn-women:hover {
     transform: scale(1.5);
     color: var(--color-primary);
 }
 
-.next-btn {
+.next-btn-men, .next-btn-women {
     right: 15px;
 }
 
