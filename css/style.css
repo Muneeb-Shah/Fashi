@@ -965,19 +965,10 @@ header {
     justify-content: space-between;
     gap: 3rem;
 }
-.banner-content div {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    height: inherit;
-    width: 32%;
-}
+
 
 .banner-content__men {
-    background: url(../images/xbanner-1.jpg);    
+    background: url(../images/xbanner-1.jpg);
 }
 
 .banner-content__women {
@@ -994,6 +985,42 @@ header {
     font-size: 2rem;
     font-weight: 700;
     padding: 1rem 2.8rem;
+}
+
+.banner-content__item {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: inherit;
+    width: 32%;
+}
+
+.banner-content .outline {
+    position: absolute;
+    height: calc(100% - 70px);
+    width: calc(100% - 60px);
+    border: 13px solid #fff;
+    opacity: 0.3;
+    visibility: visible;
+}
+
+.banner-content__item:hover .outline  {
+    visibility: visible;
+
+    animation: outline 500ms linear;
+
+}
+@keyframes outline {
+    from{
+        transform: scale(0);
+    }
+    to{
+        transform: scale(1);
+    }
 }
 
 @media screen and (max-width: 1000px) {
