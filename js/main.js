@@ -48,8 +48,11 @@ for(product of products){
 </div>`);
 }        
 
-for(let i=0; i<product_html.length; i++)
-    document.querySelector(".js-items").innerHTML += product_html[i];
+for(let i=0; i<product_html.length; i++){
+    document.querySelector('.js-items-women').innerHTML += product_html[i];
+    document.querySelector('.js-items-men').innerHTML += product_html[i];
+}
+
 
 
 // PRODUCT SLIDER

@@ -382,7 +382,7 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 290px;
+    width: 25%;
     height: 620px;
     background: url(../images/women-large.jpg);
     background-repeat: no-repeat;
@@ -412,12 +412,46 @@ header {
     border-bottom: 2px solid var(--color-border);
 }
 
+/* ITEM SLIDER */
+.item-slider {
+    position: relative;
+    height: 580px;
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.item-slider__nav {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    font-size: 2rem;
+    padding: 3.2rem 0;
+}
+
+.item-slider__nav a {
+    color: var(--color-body-lighter);
+    transition: 200ms;
+    
+}
+
+.item-slider__nav a:hover {
+    color: var(--color-headings);
+    border-bottom: 2px solid var(--color-body);
+}
+
+.item-slider__items {
+    display: flex;
+    justify-content: space-between;
+}
+
 /* ITEM CARDS */
 .item-card {
     height: 450px;
     text-align: center;
     margin: 0 2%;
-
 }
 
 .item-card__image {
@@ -479,47 +513,42 @@ header {
     font-weight: 500;
 }
 
-/* ITEM SLIDER */
-.item-slider {
-    height: 580px;
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
+@media screen and (max-width:968px) {
+    .item-slider {
+        height: 800px;
+        width: 100%;
+    }
+
+    .item-card {
+        height: 675px;
+    }
+
+    .item-card__image {
+        height: 520px;
+    }
 }
 
-.item-slider__nav {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    gap: 2rem;
-    font-size: 2rem;
-    padding: 3.2rem 0;
+/* Slick Slider arrows */
+.prev-btn, .next-btn {
+    display: block;
+    position: absolute;
+    top: 45%;
+    z-index: 999;
+    transition: 300ms;
+    cursor: pointer;
 }
 
-.item-slider__nav a {
-    color: var(--color-body-lighter);
-    transition: 200ms;
-    
+.prev-btn {
+    left: 15px;
 }
 
-.item-slider__nav a:hover {
-    color: var(--color-headings);
-    border-bottom: 2px solid var(--color-body);
+.prev-btn:hover, .next-btn:hover {
+    transform: scale(1.5);
+    color: var(--color-primary);
 }
 
-.item-slider__items {
-    display: flex;
-    justify-content: space-between;
-    /* overflow: hidden; */
-}
-
-.item-slider__items .item-card {
-    /* width: 33%; */
-}
-
-/* Slick Slider arrow positioning */
-.slick-next {
-    /* top: 38% !important; */
+.next-btn {
+    right: 15px;
 }
 
 @media screen and (max-width: 1200px) {
@@ -987,19 +1016,35 @@ header {
 }
 
 /* WOMEN SECTION */
-.women .container {
+.women .container, .men .container {
     display: flex;
     justify-content: space-between;
-    gap: 10rem;
+    gap: 2%;
+}
+
+/* MEN SECTION */
+.men .container {
+    flex-direction: row-reverse;
+}
+
+.men .gender-card {
+    background: url(../images/man-large.jpg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 620px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
 }
 
 @media screen and (max-width: 968px) {
-    .women .container {
+    .women .container, .men .container {
         flex-direction: column;
         align-items: center;
     }
 
-    .women .container .gender-card {
+    .women .container .gender-card, .men .container .gender-card {
         width: 100%;
         background-position: top;
     }
@@ -1062,47 +1107,6 @@ header {
 
     .deal .timer {
         gap: 0.5rem;
-    }
-
-}
-
-/* MEN SECTION */
-.men .container {
-    display: flex;
-    flex-direction: row-reverse;
-    justify-content: space-between;
-    gap: 10rem;
-}
-
-.men .gender-card {
-    background: url(../images/man-large.jpg);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 290px;
-    height: 620px;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-}
-
-@media screen and (max-width: 968px) {
-    .men .container {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .men .container .gender-card {
-        width: 100%;
-        background-position: top;
-    }
-    
-    .men .container .item-slider{
-        width: 100%;
-    }
-
-    .men .item-card .item-card__image{
-        height: 570px;
     }
 
 }
