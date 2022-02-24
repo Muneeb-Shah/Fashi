@@ -55,7 +55,7 @@ collapsibles.forEach((item) =>
 
 let products = [
             {id: 1, title: 'A', price: 100.00, inCart: 0},
-            {id: 2, title: 'B', price: 200.20, inCart: 0},
+            {id: 2, title: 'B', price: 200.00, inCart: 0},
             {id: 3, title: 'C', price: 310.99, inCart: 0}                    
         ];
 
@@ -64,50 +64,68 @@ let carts = document.querySelectorAll('.add-to-cart');
 
 for(let i=0; i<carts.length; i++){
     carts[i].addEventListener('click', () => {
-        cartNumbers(products[i]);
+        clickedCarts(products[i]);
+        totalPrice();
     });
 }
 
-// Storing carts
-function cartNumbers(product) {
-    // console.log(product);
-    let productNumbers = parseInt(localStorage.getItem('cartNumbers'));
+// Storing clicked carts
+function clickedCarts(clickedProduct) {
+    let clickedCartsCount = parseInt(localStorage.getItem('clickedCartsCount'));
     
-    if(productNumbers) {
-        localStorage.setItem('cartNumbers', productNumbers + 1);
-        document.querySelector('.notification-btn__badge').textContent = productNumbers + 1;
+    if(clickedCartsCount) {
+        localStorage.setItem('clickedCartsCount', clickedCartsCount + 1);
+
+        // updating cart notification btn
+        document.querySelector('.notification-btn__badge').textContent = clickedCartsCount + 1;
+
     } else {
-        localStorage.setItem('cartNumbers', 1);
+        localStorage.setItem('clickedCartsCount', 1);
         document.querySelector('.notification-btn__badge').textContent = 1;
     }
 
-    setItems(product);
+    storingClickedProducts(clickedProduct);
 }
 
-// Setting carts notification dot
-function onLoadCartNumbers() {
-    let productNumbers = localStorage.getItem('cartNumbers');
-    if(productNumbers)
-         {document.querySelector('.notification-btn__badge').textContent = productNumbers;}
+// Setting cart notification btn on load
+function onLoadclickedCartsCount() {
+    let clickedCartsCount = localStorage.getItem('clickedCartsCount');
+    if(clickedCartsCount){
+        document.querySelector('.notification-btn__badge').textContent = clickedCartsCount;
+    }
 }
 
-function setItems(product) {
-    let cartItems = localStorage.getItem("productsInCart");
-    cartItems = JSON.parse(cartItems);
+// Storing clicked products in local storage 
+function storingClickedProducts(clickedProduct) {    
+    let cartItems = JSON.parse(localStorage.getItem('productsInCart'));
 
     if(cartItems != null) {
-        cartItems[product.id].inCart += 1;
+        if(cartItems[clickedProduct.title] == undefined) {
+            cartItems = {
+                ...cartItems,
+                [clickedProduct.title]: clickedProduct
+            };
+        }
+        cartItems[clickedProduct.title].inCart += 1;
     } else {
-        product.inCart = 1;
+        clickedProduct.inCart = 1;
         cartItems = {
-        [product.id]: product
+            [clickedProduct.title]: clickedProduct
         };
-
     }
-
-
-    localStorage.setItem("productsInCart", JSON.stringify(cartItems));
     
+    localStorage.setItem('productsInCart', JSON.stringify(cartItems));
 }
 
-onLoadCartNumbers();
+// Total Price
+function totalPrice() {
+    let storedProducts = JSON.parse(localStorage.getItem('productsInCart'));
+    let totalPrice = 0;
+
+    for(let product in storedProducts){
+        totalPrice += (storedProducts[product].inCart * storedProducts[product].price);
+    }    
+    localStorage.setItem('totalPrice', totalPrice);
+}
+
+onLoadclickedCartsCount();
