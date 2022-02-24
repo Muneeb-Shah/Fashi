@@ -64,35 +64,27 @@ let carts = document.querySelectorAll('.add-to-cart');
 
 for(let i=0; i<carts.length; i++){
     carts[i].addEventListener('click', () => {
-        clickedCarts(products[i]);
+        // clickedCarts(products[i]);
+        storingClickedProducts(products[i]);
         totalPrice();
+        cartNotificationBtn();
     });
 }
 
 // Storing clicked carts
 function clickedCarts(clickedProduct) {
-    let clickedCartsCount = parseInt(localStorage.getItem('clickedCartsCount'));
-    
-    if(clickedCartsCount) {
-        localStorage.setItem('clickedCartsCount', clickedCartsCount + 1);
-
-        // updating cart notification btn
-        document.querySelector('.notification-btn__badge').textContent = clickedCartsCount + 1;
-
-    } else {
-        localStorage.setItem('clickedCartsCount', 1);
-        document.querySelector('.notification-btn__badge').textContent = 1;
-    }
-
-    storingClickedProducts(clickedProduct);
 }
 
-// Setting cart notification btn on load
-function onLoadclickedCartsCount() {
-    let clickedCartsCount = localStorage.getItem('clickedCartsCount');
-    if(clickedCartsCount){
-        document.querySelector('.notification-btn__badge').textContent = clickedCartsCount;
+// updating cart notification btn
+function cartNotificationBtn(){
+    let cartItems = JSON.parse(localStorage.getItem('productsInCart'));
+
+    let  productCount = 0;
+    for(let product in cartItems){
+        productCount += cartItems[product].inCart;
     }
+    
+    document.querySelector('.notification-btn__badge').textContent = productCount;
 }
 
 // Storing clicked products in local storage 
@@ -131,23 +123,22 @@ function totalPrice() {
 // Display Cart
 function displayCart() {
     let cartItems = JSON.parse(localStorage.getItem('productsInCart'));
-    // alert(cartItems)
-
-    // console.log(cartItems);
-    let cart__item = document.querySelector('.cart__items');
     
-    Object.values(cartItems).map(item => {
-        cart__item.innerHTML += `
-            <div class="cart__items__item">
-                <img src="images/yellow-dress.jpg" alt="">
-                <div class="cart__item-detail">
-                    <span class="cart__item-price">$${item.price} x </span><span class="cart__item-qty">${item.inCart}</span>
-                    <div class="cart__item-name">${item.title}</div>
+    let cart__item = document.querySelector('.cart__items');
+    if(cartItems) {
+        Object.values(cartItems).map(item => {
+            cart__item.innerHTML += `
+                <div class="cart__items__item">
+                    <img src="images/yellow-dress.jpg" alt="">
+                    <div class="cart__item-detail">
+                        <span class="cart__item-price">$${item.price} x </span><span class="cart__item-qty">${item.inCart}</span>
+                        <div class="cart__item-name">${item.title}</div>
+                    </div>
+                    <button class="cart__item__remove-btn" data-title="${item.title}">X</button>
                 </div>
-                <button class="cart__item__remove-btn" data-title="${item.title}">X</button>
-            </div>
-        `;
-    });
+            `;
+        });
+    }
 
     let total = document.querySelector('.cart__total__total-price');
 
@@ -155,6 +146,7 @@ function displayCart() {
 
     cart__item.onclick = function(e) {
         removeCartItem(e);
+        totalPrice();
     }
 }
 
@@ -162,15 +154,36 @@ function displayCart() {
 function removeCartItem(e) {
     let cartItems = JSON.parse(localStorage.getItem('productsInCart'));
 
+    let clickedCartsCount = JSON.parse(localStorage.getItem('clickedCartsCount'));
+
     if(e.target && e.target.classList.contains('cart__item__remove-btn')){
         const removingItem = e.target.dataset.title;
-        delete cartItems[removingItem];
+
+        // Updating cart notification btn count
+        // clickedCartsCount = clickedCartsCount - cartItems[removingItem].inCart;
+        // document.querySelector('.notification-btn__badge').textContent = clickedCartsCount;
+        // localStorage.setItem('clickedCartsCount', JSON.stringify(clickedCartsCount));
+
+        if (cartItems[removingItem].inCart > 1){
+            cartItems[removingItem].inCart -= 1;
+        } else {
+            delete cartItems[removingItem];
+        }
         localStorage.setItem('productsInCart', JSON.stringify(cartItems));
-    }   
+        document.querySelector('.cart__item-qty').textContent = cartItems[removingItem].inCart;
+        
+        totalPrice();
+        document.querySelector('.cart__total__total-price').textContent = localStorage.getItem('totalPrice');
+        cartNotificationBtn();
+        
+    }
 }
 
 
 
 
-onLoadclickedCartsCount();
+
+
+// onLoadclickedCartsCount();
+cartNotificationBtn()
 displayCart();
