@@ -128,4 +128,49 @@ function totalPrice() {
     localStorage.setItem('totalPrice', totalPrice);
 }
 
+// Display Cart
+function displayCart() {
+    let cartItems = JSON.parse(localStorage.getItem('productsInCart'));
+    // alert(cartItems)
+
+    // console.log(cartItems);
+    let cart__item = document.querySelector('.cart__items');
+    
+    Object.values(cartItems).map(item => {
+        cart__item.innerHTML += `
+            <div class="cart__items__item">
+                <img src="images/yellow-dress.jpg" alt="">
+                <div class="cart__item-detail">
+                    <span class="cart__item-price">$${item.price} x </span><span class="cart__item-qty">${item.inCart}</span>
+                    <div class="cart__item-name">${item.title}</div>
+                </div>
+                <button class="cart__item__remove-btn" data-title="${item.title}">X</button>
+            </div>
+        `;
+    });
+
+    let total = document.querySelector('.cart__total__total-price');
+
+    total.textContent = localStorage.getItem('totalPrice');
+
+    cart__item.onclick = function(e) {
+        removeCartItem(e);
+    }
+}
+
+// Removing cart products
+function removeCartItem(e) {
+    let cartItems = JSON.parse(localStorage.getItem('productsInCart'));
+
+    if(e.target && e.target.classList.contains('cart__item__remove-btn')){
+        const removingItem = e.target.dataset.title;
+        delete cartItems[removingItem];
+        localStorage.setItem('productsInCart', JSON.stringify(cartItems));
+    }   
+}
+
+
+
+
 onLoadclickedCartsCount();
+displayCart();
