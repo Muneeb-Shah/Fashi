@@ -10,52 +10,52 @@ collapsibles.forEach((item) =>
 let products = [
     {id: 1, title: 'A', price: 100.00, inCart: 0},
     {id: 2, title: 'B', price: 200.00, inCart: 0},
-    {id: 3, title: 'C', price: 310.99, inCart: 0},
-    {id: 3, title: 'D', price: 310.99, inCart: 0},
-    {id: 3, title: 'E', price: 310.99, inCart: 0},
-    {id: 3, title: 'F', price: 310.99, inCart: 0},
-    {id: 3, title: 'G', price: 310.99, inCart: 0},
-    {id: 3, title: 'H', price: 310.99, inCart: 0},
-    {id: 3, title: 'I', price: 310.99, inCart: 0},
-    {id: 3, title: 'J', price: 310.99, inCart: 0},
-    {id: 3, title: 'K', price: 310.99, inCart: 0},
-    {id: 3, title: 'L', price: 310.99, inCart: 0},
-    {id: 3, title: 'M', price: 310.99, inCart: 0},
-    {id: 3, title: 'N', price: 310.99, inCart: 0},
-    {id: 3, title: 'O', price: 310.99, inCart: 0},
-    {id: 3, title: 'P', price: 310.99, inCart: 0},
-    {id: 3, title: 'Q', price: 310.99, inCart: 0},
-    {id: 3, title: 'R', price: 310.99, inCart: 0},
-    {id: 3, title: 'S', price: 310.99, inCart: 0},
-    {id: 3, title: 'T', price: 310.99, inCart: 0}
+    {id: 3, title: 'C', price: 310.00, inCart: 0},
+    {id: 3, title: 'D', price: 310.00, inCart: 0},
+    {id: 3, title: 'E', price: 310.00, inCart: 0},
+    {id: 3, title: 'F', price: 310.00, inCart: 0},
+    {id: 3, title: 'G', price: 310.00, inCart: 0},
+    {id: 3, title: 'H', price: 310.00, inCart: 0},
+    {id: 3, title: 'I', price: 310.00, inCart: 0},
+    {id: 3, title: 'J', price: 310.00, inCart: 0},
+    {id: 3, title: 'K', price: 310.00, inCart: 0},
+    {id: 3, title: 'L', price: 310.00, inCart: 0},
+    {id: 3, title: 'M', price: 310.00, inCart: 0},
+    {id: 3, title: 'N', price: 310.00, inCart: 0},
+    {id: 3, title: 'O', price: 310.00, inCart: 0},
+    {id: 3, title: 'P', price: 310.00, inCart: 0},
+    {id: 3, title: 'Q', price: 310.00, inCart: 0},
+    {id: 3, title: 'R', price: 310.00, inCart: 0},
+    {id: 3, title: 'S', price: 310.00, inCart: 0},
+    {id: 3, title: 'T', price: 310.00, inCart: 0}
 ];
 
-// let product_html = [];
+let product_html = [];
 
-// for(product of products){
-//     product_html.push(`<div id="${product.id}">
-//     <div class="item-card">
-//         <div class="item-card__image">
-//             <div class="item-card__btns">
-//                 <button class="btn-primary"><i class="fa fa-cart-plus"></i></button>
-//                 <button class="btn-secondary">+ Quick View</button>
-//                 <button class="btn-secondary"><i class="fa fa-thumbs-up"></i></button>
-//             </div>
-//             <i class="fa fa-heart item-card__like-btn"></i>
-//         </div>
-//         <div class="item-card__desc">
-//             <p class="item-card__desc__category">TOWEL</p>
-//             <p class="item-card__desc__name">${product.title}</p>
-//             <p class="item-card__desc__price">$${product.price}</p>
-//         </div>
-//     </div>
-// </div>`);
-// }        
+for(product of products){
+    product_html.push(`<div id="${product.id}">
+    <div class="item-card">
+        <div class="item-card__image">
+            <div class="item-card__btns">
+                <button class="btn-primary"><i class="fa fa-cart-plus"></i></button>
+                <button class="btn-secondary add-to-cart">Add to Cart</button>
+                <button class="btn-secondary"><i class="fa fa-thumbs-up"></i></button>
+            </div>
+            <i class="fa fa-heart item-card__like-btn"></i>
+        </div>
+        <div class="item-card__desc">
+            <p class="item-card__desc__category">TOWEL</p>
+            <p class="item-card__desc__name">${product.title}</p>
+            <p class="item-card__desc__price">$${product.price}</p>
+        </div>
+    </div>
+</div>`);
+}        
 
-// for(let i=0; i<product_html.length; i++){
-//     document.querySelector('.js-items-women').innerHTML += product_html[i];
-//     document.querySelector('.js-items-men').innerHTML += product_html[i];
-// }
+for(let i=0; i<product_html.length; i++){
+    document.querySelector('.js-items-women').innerHTML += product_html[i];
+    // document.querySelector('.js-items-men').innerHTML += product_html[i];
+}
 
 // Fetching carts
 let carts = document.querySelectorAll('.add-to-cart');
@@ -68,10 +68,6 @@ for(let i=0; i<carts.length; i++){
     });
 }
 
-// Storing clicked carts
-function clickedCarts(clickedProduct) {
-}
-
 // updating cart notification btn
 function cartNotificationBtn(){
     let cartItems = JSON.parse(localStorage.getItem('productsInCart'));
@@ -81,7 +77,7 @@ function cartNotificationBtn(){
         productCount += cartItems[product].inCart;
     }
     
-    document.querySelector('.notification-btn__badge').textContent = productCount;
+    document.querySelector('.cart-badge').textContent = productCount;
 }
 
 // Storing clicked products in local storage 
@@ -132,8 +128,7 @@ function displayCart() {
 
     if(cartItems) {
         Object.values(cartItems).map(item => {
-            cart__item.innerHTML += `
-            
+            cart__item.innerHTML += `            
                 <div class="cart__items__item removing-item${item.title}">
                     <img src="images/yellow-dress.jpg" alt="">
                     <div class="cart__item-detail">
@@ -161,8 +156,6 @@ function displayCart() {
 function removeCartItem(e) {
     
     let cartItems = JSON.parse(localStorage.getItem('productsInCart'));
-
-    let clickedCartsCount = JSON.parse(localStorage.getItem('clickedCartsCount'));
 
     if(e?.target?.classList.contains('cart__item__remove-btn')){
         const removingItem = e.target.dataset.title;
