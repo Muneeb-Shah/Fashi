@@ -839,7 +839,6 @@ header {
     z-index: 999;
 }
 
-
 .cart-hover-btn:hover .cart {
     opacity: 1;
     top: 90%;
@@ -896,6 +895,10 @@ header {
 .cart__view-cart-btn, .cart__checkout-btn {
     width: 100%;
     font-size: 1.2rem;
+}
+
+.cart .view-cart-btn-hidden {
+    /* display: none; */
 }
 
 .cart__view-cart-btn {
