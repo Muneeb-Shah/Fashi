@@ -114,24 +114,33 @@ function totalPrice() {
     let storedProducts = JSON.parse(localStorage.getItem('productsInCart'));
     let totalPrice = 0;
 
-    for(let product in storedProducts){
-        totalPrice += (storedProducts[product].inCart * storedProducts[product].price);
-    }    
+    if(storedProducts == {} || storedProducts == null){
     localStorage.setItem('totalPrice', totalPrice);
+    } else {
+        for(let product in storedProducts){
+            totalPrice += (storedProducts[product].inCart * storedProducts[product].price);
+        }    
+        localStorage.setItem('totalPrice', totalPrice);
+    }
+    document.querySelector('.cart__total__total-price').textContent = localStorage.getItem('totalPrice');
 }
+
+// Render
 
 // Display Cart
 function displayCart() {
     let cartItems = JSON.parse(localStorage.getItem('productsInCart'));
     
     let cart__item = document.querySelector('.cart__items');
+
     if(cartItems) {
         Object.values(cartItems).map(item => {
             cart__item.innerHTML += `
-                <div class="cart__items__item">
+            
+                <div class="cart__items__item removing-item${item.title}">
                     <img src="images/yellow-dress.jpg" alt="">
                     <div class="cart__item-detail">
-                        <span class="cart__item-price">$${item.price} x </span><span class="cart__item-qty">${item.inCart}</span>
+                        <span class="cart__item-price">$${item.price} x </span><span class="cart__item-qty removing-qty${item.title}">${item.inCart}</span>
                         <div class="cart__item-name">${item.title}</div>
                     </div>
                     <button class="cart__item__remove-btn" data-title="${item.title}">X</button>
@@ -146,44 +155,36 @@ function displayCart() {
 
     cart__item.onclick = function(e) {
         removeCartItem(e);
-        totalPrice();
+        
+        cartNotificationBtn();
     }
 }
 
 // Removing cart products
 function removeCartItem(e) {
+    
     let cartItems = JSON.parse(localStorage.getItem('productsInCart'));
 
     let clickedCartsCount = JSON.parse(localStorage.getItem('clickedCartsCount'));
 
-    if(e.target && e.target.classList.contains('cart__item__remove-btn')){
+    if(e?.target?.classList.contains('cart__item__remove-btn')){
         const removingItem = e.target.dataset.title;
 
-        // Updating cart notification btn count
-        // clickedCartsCount = clickedCartsCount - cartItems[removingItem].inCart;
-        // document.querySelector('.notification-btn__badge').textContent = clickedCartsCount;
-        // localStorage.setItem('clickedCartsCount', JSON.stringify(clickedCartsCount));
-
-        if (cartItems[removingItem].inCart > 1){
+        if (cartItems[removingItem].inCart >= 1){
             cartItems[removingItem].inCart -= 1;
-        } else {
-            delete cartItems[removingItem];
+            document.querySelector(`.removing-qty${removingItem}`).textContent = cartItems[removingItem].inCart;
+            
+            if(cartItems[removingItem].inCart == 0) {
+                document.querySelector(`.removing-item${removingItem}`).innerHTML = '';
+                delete cartItems[removingItem];
+            }
         }
-        localStorage.setItem('productsInCart', JSON.stringify(cartItems));
-        document.querySelector('.cart__item-qty').textContent = cartItems[removingItem].inCart;
-        
+        localStorage.setItem('productsInCart', JSON.stringify(cartItems));         
         totalPrice();
-        document.querySelector('.cart__total__total-price').textContent = localStorage.getItem('totalPrice');
-        cartNotificationBtn();
-        
     }
 }
 
 
-
-
-
-
-// onLoadclickedCartsCount();
 cartNotificationBtn()
 displayCart();
+totalPrice();
