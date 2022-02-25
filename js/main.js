@@ -7,24 +7,28 @@ collapsibles.forEach((item) =>
 );
 
 // PRODUCTS
-// let products = [
-//             {id: 1, title: 'A', price: 100.00},
-//             {id: 2, title: 'B', price: 200.20},
-//             {id: 3, title: 'C', price: 310.99},
-//             {id: 4, title: 'D', price: 310.99},
-//             {id: 5, title: 'E', price: 310.99},
-//             {id: 1, title: 'F', price: 100.00},
-//             {id: 2, title: 'G', price: 200.20},
-//             {id: 3, title: 'H', price: 310.99},
-//             {id: 4, title: 'I', price: 310.99},
-//             {id: 5, title: 'J', price: 310.99}, 
-//             {id: 1, title: 'K', price: 100.00},
-//             {id: 2, title: 'L', price: 200.20},
-//             {id: 3, title: 'M', price: 310.99},
-//             {id: 4, title: 'N', price: 310.99},
-//             {id: 5, title: 'O', price: 310.99}
-                    
-//         ];
+let products = [
+    {id: 1, title: 'A', price: 100.00, inCart: 0},
+    {id: 2, title: 'B', price: 200.00, inCart: 0},
+    {id: 3, title: 'C', price: 310.99, inCart: 0},
+    {id: 3, title: 'D', price: 310.99, inCart: 0},
+    {id: 3, title: 'E', price: 310.99, inCart: 0},
+    {id: 3, title: 'F', price: 310.99, inCart: 0},
+    {id: 3, title: 'G', price: 310.99, inCart: 0},
+    {id: 3, title: 'H', price: 310.99, inCart: 0},
+    {id: 3, title: 'I', price: 310.99, inCart: 0},
+    {id: 3, title: 'J', price: 310.99, inCart: 0},
+    {id: 3, title: 'K', price: 310.99, inCart: 0},
+    {id: 3, title: 'L', price: 310.99, inCart: 0},
+    {id: 3, title: 'M', price: 310.99, inCart: 0},
+    {id: 3, title: 'N', price: 310.99, inCart: 0},
+    {id: 3, title: 'O', price: 310.99, inCart: 0},
+    {id: 3, title: 'P', price: 310.99, inCart: 0},
+    {id: 3, title: 'Q', price: 310.99, inCart: 0},
+    {id: 3, title: 'R', price: 310.99, inCart: 0},
+    {id: 3, title: 'S', price: 310.99, inCart: 0},
+    {id: 3, title: 'T', price: 310.99, inCart: 0}
+];
 
 // let product_html = [];
 
@@ -53,18 +57,11 @@ collapsibles.forEach((item) =>
 //     document.querySelector('.js-items-men').innerHTML += product_html[i];
 // }
 
-let products = [
-            {id: 1, title: 'A', price: 100.00, inCart: 0},
-            {id: 2, title: 'B', price: 200.00, inCart: 0},
-            {id: 3, title: 'C', price: 310.99, inCart: 0}                    
-        ];
-
 // Fetching carts
 let carts = document.querySelectorAll('.add-to-cart');
 
 for(let i=0; i<carts.length; i++){
     carts[i].addEventListener('click', () => {
-        // clickedCarts(products[i]);
         storingClickedProducts(products[i]);
         totalPrice();
         cartNotificationBtn();
@@ -244,10 +241,10 @@ totalPrice();
 //     </div>`);
 // }        
 
-for(let i=0; i<product_html.length; i++){
-    document.querySelector('.js-items-women').innerHTML += product_html[i];
-    document.querySelector('.js-items-men').innerHTML += product_html[i];
-}
+// for(let i=0; i<product_html.length; i++){
+//     document.querySelector('.js-items-women').innerHTML += product_html[i];
+//     document.querySelector('.js-items-men').innerHTML += product_html[i];
+// }
 
 
 
