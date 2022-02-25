@@ -74,12 +74,9 @@ button {
 /* .slide-left {
 	animation: slide-left 3s ease-in 1s infinite both;
 }
-
 @keyframes slide-left {
-
     0% {
         transform: translateX(0);
-
     }
     100% {
         transform: translate(-260px);
@@ -95,7 +92,6 @@ button {
 
     /* 0% {
         transform: translateX(0);
-
     }
     100% {
         transform: translate(-260px);
@@ -1346,16 +1342,13 @@ header {
     height: 121px;
     background-color: #303030;
 }
-
 .brands .container{
     height: 121px;
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 3%;
-
 }
-
 .brands__img {
     height: 40px;
     width: 15%;
@@ -1488,4 +1481,3 @@ header {
         width: 100%;
     }
 }
-
