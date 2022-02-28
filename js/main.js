@@ -50,7 +50,7 @@ for(product of productsWomen){
         <div class="item-card__desc">
             <p class="item-card__desc__category">TOWEL</p>
             <p class="item-card__desc__name">${product.title}</p>
-            <p class="item-card__desc__price">$${product.price}</p>
+            <p class="item-card__desc__price">$${product.price}.00</p>
         </div>
     </div>
 </div>`);
@@ -70,7 +70,7 @@ for(product of productsMen){
         <div class="item-card__desc">
             <p class="item-card__desc__category">TOWEL</p>
             <p class="item-card__desc__name">${product.title}</p>
-            <p class="item-card__desc__price">$${product.price}</p>
+            <p class="item-card__desc__price">$${product.price}.00</p>
         </div>
     </div>
 </div>`);
@@ -148,6 +148,9 @@ function totalPrice() {
         localStorage.setItem('totalPrice', totalPrice);
     }
     document.querySelector('.cart__total__total-price').textContent = localStorage.getItem('totalPrice');
+    let headerTotal = document.querySelector('.header__middle__cart__total');
+
+    headerTotal.textContent = `$${localStorage.getItem('totalPrice')}.00`;
 }
 
 // Display Cart
@@ -163,7 +166,7 @@ function displayCart() {
             <div class="cart__items__item removing-item${item.title}">
             <img src="images/yellow-dress.jpg" alt="">
             <div class="cart__item-detail">
-            <span class="cart__item-price">$${item.price} x </span><span class="cart__item-qty removing-qty${item.title}">${item.inCart}</span>
+            <span class="cart__item-price">$${item.price}.00 x </span><span class="cart__item-qty removing-qty${item.title}">${item.inCart}</span>
             <div class="cart__item-name">${item.title}</div>
             </div>
             <button class="cart__item__remove-btn" data-title="${item.title}">X</button>
@@ -173,7 +176,7 @@ function displayCart() {
     }
 
     let total = document.querySelector('.cart__total__total-price');
-
+    
     total.textContent = localStorage.getItem('totalPrice');
 
     cart__item.onclick = function(e) {
