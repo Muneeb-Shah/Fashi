@@ -953,6 +953,12 @@ header {
     margin-bottom: 1rem;
 }
 
+@media screen and (max-width:768px){
+    .cart{
+        left: -300%;
+    }
+}
+
 /* HERO */
 .hero {
     display: block;
