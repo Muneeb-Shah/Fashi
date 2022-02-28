@@ -956,6 +956,7 @@ header {
 @media screen and (max-width:768px){
     .cart{
         left: -300%;
+        width: 320px;
     }
 }
 
