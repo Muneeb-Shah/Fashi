@@ -1,6 +1,6 @@
 // PRODUCTS SLIDER WOMEN
 $('.products-slider-women').slick({
-    dots: true,
+    dots: false,
     infinite: true,
     speed: 300,
     arrows: true,
@@ -19,7 +19,7 @@ $('.products-slider-women').slick({
             slidesToShow: 2,
             slidesToScroll: 1,
             infinite: true,
-            dots: true
+            dots: false
         }
         },
         {
@@ -28,7 +28,7 @@ $('.products-slider-women').slick({
             slidesToShow: 1,
             slidesToScroll: 1,
             infinite: true,
-            dots: true
+            dots: false
         }
         }
     ]
@@ -36,7 +36,7 @@ $('.products-slider-women').slick({
 
 // PRODUCTS SLIDER MEN
 $('.products-slider-men').slick({
-    dots: true,
+    dots: false,
     infinite: true,
     speed: 300,
     arrows: true,
@@ -55,7 +55,7 @@ $('.products-slider-men').slick({
             slidesToShow: 2,
             slidesToScroll: 1,
             infinite: true,
-            dots: true
+            dots: false
         }
         },
         {
@@ -64,7 +64,7 @@ $('.products-slider-men').slick({
             slidesToShow: 1,
             slidesToScroll: 1,
             infinite: true,
-            dots: true
+            dots: false
         }
         }
     ]
