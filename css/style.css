@@ -499,7 +499,11 @@ header {
 .item-card__btns .btn-secondary {
     font-size: 1.5rem;
     padding: 0 10px;
+    transition: 250ms;
+}
 
+.item-card__btns .btn-secondary:hover {
+    background-color: var(--color-primary);
 }
 
 .item-card__like-btn {
@@ -542,6 +546,37 @@ header {
     .item-card__image {
         height: 520px;
     }
+}
+
+/* TOAST */
+#toast {
+    position: fixed;
+    visibility: hidden;
+    min-width: 250px;
+    margin-left: -125px; 
+    background-color: var(--color-primary); 
+    color: #fff; 
+    text-align: center; 
+    border-radius: 2px; 
+    padding: 16px;
+    z-index: 1; 
+    left: 50%; 
+    bottom: 30%;
+}
+
+#toast.show {
+  visibility: visible;
+  animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+@keyframes fadein {
+  from {bottom: 0; opacity: 0;}
+  to {bottom: 30%; opacity: 1;}
+}
+
+@keyframes fadeout {
+  from {bottom: 30%; opacity: 1;}
+  to {bottom: 0; opacity: 0;}
 }
 
 /* Slick Slider arrows */
