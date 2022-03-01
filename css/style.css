@@ -9,7 +9,6 @@
     --slider-animation: -260px;
 }
 
-
 /* Reset */
 
 *,
@@ -1562,4 +1561,8 @@ header {
     .footer__search-input input {
         width: 100%;
     }
+}
+
+.hidden {
+    display: none;
 }

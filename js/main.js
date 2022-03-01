@@ -219,9 +219,8 @@ function removeCartItem(e) {
 let viewCart = document.querySelector('.cart__view-cart-btn');
 viewCart.onclick = function(){
     let cartItems = JSON.parse(localStorage.getItem('productsInCart'));
-    if(cartItems == {}){
-        localStorage.clear();
-    }
+    if(Object.keys(cartItems).length > 0)
+        viewCart.classList.add('hidden');
     displayCart();
 }
 
